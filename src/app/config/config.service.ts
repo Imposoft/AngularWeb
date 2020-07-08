@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
@@ -12,6 +12,6 @@ export class ConfigService {
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<Menu> {
-    return this.http.get<Menu>('https://api.chucknorris.io/jokes/random');
+    return this.http.get<Menu>('http://imposoft.es:8080/loadMenu', { params: new HttpParams().set('id', String(1)) });
   }
 }

@@ -1,6 +1,7 @@
 export interface Menu {
-  value: string; // Contiene la frase
-  icon_url: string;
-  id: string; // Identificador la frase aleatoria
-  url: string; // URL que contiene el ID y permite recuperar la frase
+  menuText: string; // Contiene la frase
+  sections: unknown;
+  name: string; // Identificador la frase aleatoria
+  description: string; // URL que contiene el ID y permite recuperar la frase
+  id: string; // URL que contiene el ID y permite recuperar la frase
 }

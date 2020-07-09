@@ -1,12 +1,12 @@
 <body>
-  <mat-card>
-    <mat-card-title>{{ frase?.name}}</mat-card-title>
-    <h4>{{ frase?.description }}</h4>
+  <mat-card [style.backgroundColor]="'rgb(16,49,66)'">
+    <mat-card-title [ngStyle]="{'color':'white'}">{{ frase?.name}}</mat-card-title>
+    <h4 [ngStyle]="{'color':'white'}">{{ frase?.description }}</h4>
     <p></p>
-    <mat-card *ngFor="let section of frase.sections">
+    <mat-card [style.backgroundColor]="'rgb(2,153,220)'" *ngFor="let section of frase.sections">
       <mat-card-title>{{section.name}}</mat-card-title>
       <h4>{{ section?.description }}</h4>
-      <mat-card *ngFor="let dish of section.dishes">
+      <mat-card [style.backgroundColor]="'rgb(128,186,245)'" *ngFor="let dish of section.dishes">
         <mat-card-title>{{dish.name}}</mat-card-title>
         <h4>{{ dish?.description }}</h4>
         <h4>Precio: {{ dish?.price }} €</h4>

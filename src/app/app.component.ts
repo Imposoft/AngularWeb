@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ConfigService } from './config/config.service';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import {MatCardModule} from '@angular/material/card';
+
 import {Menu} from './models/menu';
 
 @Component({

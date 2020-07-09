@@ -1,8 +1,17 @@
 <body>
   <mat-card>
-    <h1>{{ frase?.name}}</h1>
-    <h2>{{ frase?.description }}</h2>
+    <mat-card-title>{{ frase?.name}}</mat-card-title>
+    <h4>{{ frase?.description }}</h4>
     <p></p>
-    <p>{{frase.sections[0].name}}</p>
+    <mat-card *ngFor="let section of frase.sections">
+      <mat-card-title>{{section.name}}</mat-card-title>
+      <h4>{{ section?.description }}</h4>
+      <mat-card *ngFor="let dish of section.dishes">
+        <mat-card-title>{{dish.name}}</mat-card-title>
+        <h4>{{ dish?.description }}</h4>
+        <h4>Precio: {{ dish?.price }} €</h4>
+        <h5>Alergenos: {{ dish?.allergens }}</h5>
+      </mat-card>
+    </mat-card>
   </mat-card>
 </body>
